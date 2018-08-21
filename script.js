@@ -6,13 +6,11 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser')
 
-const html = '/dist/store-app';
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(html));
 
 
 var connection = mysql.createPool({
@@ -43,9 +41,7 @@ app.use(function (req, res, next) {
 })
 ;
 
-app.get('/app/', function(req, res) {
-    res.sendFile(path.join(html, 'index.html'))
-});
+
 
 app.get('/getallusers', function (req, resp) {
 
