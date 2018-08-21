@@ -19,8 +19,8 @@ If you did it you have to change the connection variables by:
     connectionLimit: 50,
     host: 'localhost',
     user: 'root',
-    password: '', --> empty password
-    database: 'takumDB', --> database name
+    password: '', 
+    database: 'takumDB', 
     insecureAuth: true,
 
 });`
