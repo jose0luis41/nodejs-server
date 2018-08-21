@@ -94,7 +94,7 @@ app.get('/loginUser/:emailUser/:passUser', function (req, resp) {
             tempCont.query("SELECT * FROM Users WHERE Email='"+email+"'", function (error, rows, fields) {
                 tempCont.release();
                 if (!!error) {
-                    next(error);
+                    console.log('ERROR', error);
                 } else {
                     var currentJson = rows[0];
                     if(currentJson){
