@@ -23,15 +23,15 @@ var connection = mysql.createPool({
 
 });
 
-/*
-connection.connect( function(error){
+
+connection.getConnection( function(error){
     if(error){
         console.log(error);
         throw error;
     }else{
-        console.log('connected');
+        console.log('CONNECTED');
     }
-});*/
+});
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
