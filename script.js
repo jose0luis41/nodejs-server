@@ -14,14 +14,14 @@ app.use(cookieParser());
 
 
 var connection = mysql.createPool({
-    connectionLimit: 50,
+    connectionLimit: 100,
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: '',
     database: 'takumDB',
     insecureAuth: true,
 
-});
+})
 
 
 connection.getConnection( function(error){
@@ -52,6 +52,7 @@ app.get('/getallusers', function (req, resp) {
             tempCont.query("SELECT * FROM Users", function (error, rows, fields) {
                 tempCont.release();
                 if (!!error) {
+                    console.log(error);
                     console.log('query ERROR');
                 } else {
                     resp.json(rows)
